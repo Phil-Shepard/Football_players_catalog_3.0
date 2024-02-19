@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add Football Player</title>
+</head>
+<body>
+<h1>Add Football Player</h1>
+<form th:action="@{/addPlayers}" method="post" th:object="${player}">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="name" th:field="*{name}" required/>
+    <br/>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="surname" th:field="*{surname}" required/>
+    <br/>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" th:field="*{gender}" required>
+        <option value="MALE">Male</option>
+        <option value="FEMALE">Female</option>
+    </select>
+    <br/>
+
+    <label for="birthdate">Date of Birth:</label>
+    <input type="date" id="birthdate" name="birthDayDate" th:field="*{birthDayDate}" required/>
+    <br/>
+
+    <label for="team">Team:</label>
+    <select id="team" name="teamName" th:field="*{teamName}" required>
+        <!-- Здесь добавьте код для отображения существующих команд -->
+    </select>
+    <br/>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country" th:field="*{country}" required>
+        <option value="Russia">Russia</option>
+        <option value="USA">USA</option>
+        <option value="Italy">Italy</option>
+    </select>
+    <br/>
+
+    <button type="submit">Add Player</button>
+</form>
+</body>
+</html>
