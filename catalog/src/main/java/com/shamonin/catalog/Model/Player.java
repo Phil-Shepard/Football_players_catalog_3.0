@@ -12,7 +12,7 @@ public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer id;
+    private long id;
 
     @Column(name = "name")
     private String name;
@@ -31,5 +31,19 @@ public class Player {
 
     @Column(name = "Country")
     private String Country;
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team team;
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 
 }
+
+
+
+

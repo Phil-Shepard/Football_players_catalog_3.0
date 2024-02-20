@@ -1,36 +1,25 @@
+<!-- addPlayer.html -->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Football Player</title>
 </head>
 <body>
-<h1>Add Football Player</h1>
-<form th:action="@{/addPlayers}" method="post" th:object="${player}">
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" name="name" th:field="*{name}" required/>
-    <br/>
+<h2>Add Football Player</h2>
 
-    <label for="lastName">Last Name:</label>
-    <input type="text" id="lastName" name="surname" th:field="*{surname}" required/>
-    <br/>
+<form th:action="@{/add}" method="post" th:object="${player}">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" required />
 
-    <label for="gender">Gender:</label>
-    <select id="gender" name="gender" th:field="*{gender}" required>
-        <option value="MALE">Male</option>
-        <option value="FEMALE">Female</option>
-    </select>
-    <br/>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname" th:field="*{surname}" required />
 
-    <label for="birthdate">Date of Birth:</label>
-    <input type="date" id="birthdate" name="birthDayDate" th:field="*{birthDayDate}" required/>
-    <br/>
+    <!-- Другие поля ввода -->
 
-    <label for="team">Team:</label>
-    <select id="team" name="teamName" th:field="*{teamName}" required>
-        <!-- Здесь добавьте код для отображения существующих команд -->
-    </select>
-    <br/>
+    <label for="teamName">Team Name:</label>
+    <input type="text" id="teamName" name="teamName" th:field="*{teamName}" required />
 
     <label for="country">Country:</label>
     <select id="country" name="country" th:field="*{country}" required>
@@ -38,9 +27,10 @@
         <option value="USA">USA</option>
         <option value="Italy">Italy</option>
     </select>
-    <br/>
 
     <button type="submit">Add Player</button>
 </form>
+
+<a th:href="@{/}" class="btn">Back to Home</a>
 </body>
 </html>

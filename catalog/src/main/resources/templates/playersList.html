@@ -1,0 +1,36 @@
+<!-- playersList.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Players List</title>
+</head>
+<body>
+<h2>Football Players List</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <!-- Другие заголовки -->
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="player : ${players}">
+        <td th:text="${player.id}"></td>
+        <td th:text="${player.name + ' ' + player.surname}"></td>
+        <!-- Другие поля -->
+        <td>
+            <a th:href="@{/edit/{id}(id=${player.id})}">Edit</a>
+            <!-- Добавьте ссылку на страницу редактирования, если нужно -->
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/}" class="btn">Back to Home</a>
+</body>
+</html>
