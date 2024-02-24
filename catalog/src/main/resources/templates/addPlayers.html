@@ -4,40 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Football Player</title>
+    <title>Каталог Футболистов 3.0</title>
 </head>
 <body>
-<h2>Add Football Player</h2>
+<h2>Добавить футболиста</h2>
 
-<form th:action="@{/add}" method="post" th:object="${player}">
-    <label for="name">Name:</label>
+<form th:action="@{/}" method="post" th:object="${player}">
+    <label for="name">Имя:</label>
     <input type="text" id="name" name="name" th:field="*{name}" required />
 
-    <label for="surname">Surname:</label>
+    <label for="surname">Фамилия:</label>
     <input type="text" id="surname" name="surname" th:field="*{surname}" required />
 
-    <label for="gender">Gender:</label>
+    <label for="gender">Пол:</label>
     <select id="gender" name="gender" th:field="*{gender}" required >
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
+        <option value="Male">Мужчина</option>
+        <option value="Female">Женщина</option>
     </select>
 
-    <label for="birthDayDate">BirthDayDate:</label>
+    <label for="birthDayDate">Дата рождения:</label>
     <input type="date" id="birthDayDate" name="birthDayDate" th:field="*{myDate}" required />
 
-    <label for="teamName">Team Name:</label>
+    <label for="teamName">Название команды:</label>
     <input type="text" id="teamName" name="teamName" th:field="*{teamName}" required />
 
-    <label for="country">Country:</label>
+    <label for="country">Страна:</label>
     <select id="country" name="country" th:field="*{country}" required>
-        <option value="Russia">Russia</option>
-        <option value="USA">USA</option>
-        <option value="Italy">Italy</option>
+        <option value="Russia">Россия</option>
+        <option value="USA">США</option>
+        <option value="Italy">Италия</option>
     </select>
 
-    <button type="submit">Add Player</button>
+    <button type="submit">Добавить футболиста</button>
 </form>
 
-<a th:href="@{/}" class="btn">Back to Home</a>
+<a th:href="@{/players}" class="btn">Список игроков</a>
 </body>
 </html>

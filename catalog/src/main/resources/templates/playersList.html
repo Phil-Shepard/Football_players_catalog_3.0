@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Players List</title>
+    <title>Каталог Футболистов 3.0</title>
 </head>
 <body>
-<h2>Football Players List</h2>
+<h2>Список футболистов</h2>
 
 <table>
     <thead>
@@ -24,13 +24,13 @@
         <td th:text="${player.name + ' ' + player.surname}"></td>
         <!-- Другие поля -->
         <td>
-            <a th:href="@{/edit/{id}(id=${player.id})}">Edit</a>
+            <a th:href="@{/edit/{id}(id=${player.id})}">Редактировать</a>
             <!-- Добавьте ссылку на страницу редактирования, если нужно -->
         </td>
     </tr>
     </tbody>
 </table>
 
-<a th:href="@{/}" class="btn">Back to Home</a>
+<a th:href="@{/}" class="btn">Добавить футболиста</a>
 </body>
 </html>
