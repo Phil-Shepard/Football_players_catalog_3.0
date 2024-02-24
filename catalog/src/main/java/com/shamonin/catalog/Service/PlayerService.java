@@ -20,9 +20,11 @@ public class PlayerService {
     }
 
     public void addPlayer(Player player) {
-        Team existingTeam = teamService.findTeamByName(player.getTeam().getTeamName());
+        Team existingTeam = teamService.findTeamByName(player.getTeamName());
         if (existingTeam == null) {
-            teamService.addTeam(player.getTeam());
+            Team team = new Team();
+            team.setTeamName(player.getTeamName());
+            teamService.addTeam(team);
         }
 
         playerRepository.save(player);

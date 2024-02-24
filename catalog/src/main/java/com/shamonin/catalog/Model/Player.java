@@ -1,8 +1,10 @@
 package com.shamonin.catalog.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -14,33 +16,34 @@ public class Player {
     @Column(name="id")
     private long id;
 
-    @Column(name = "name")
+    @Column(name="name")
     private String name;
 
-    @Column(name = "surname")
+    @Column(name="surname")
     private String surname;
 
-    @Column(name = "gender")
+    @Column(name="gender")
     private String gender;
 
-    @Column(name = "birthDayDate")
-    private Date birthDayDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @Column(name="myDate")
+    public LocalDate myDate;
 
-    @Column(name = "teamName")
+    @Column(name="teamName")
     private String teamName;
 
-    @Column(name = "Country")
-    private String Country;
-    @ManyToOne
-    @JoinColumn(name = "team_id")
-    private Team team;
-    public Team getTeam() {
-        return team;
-    }
+    @Column(name="country")
+    private String country;
 
-    public void setTeam(Team team) {
-        this.team = team;
-    }
+//    @ManyToOne
+//    private Team team;
+//    public Team getTeam() {
+//        return team;
+//    }
+//
+//    public void setTeam(Team team) {
+//        this.team = team;
+//    }
 
 }
 

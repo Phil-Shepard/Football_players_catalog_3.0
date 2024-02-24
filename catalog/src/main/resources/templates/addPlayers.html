@@ -16,7 +16,14 @@
     <label for="surname">Surname:</label>
     <input type="text" id="surname" name="surname" th:field="*{surname}" required />
 
-    <!-- Другие поля ввода -->
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" th:field="*{gender}" required >
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+    <label for="birthDayDate">BirthDayDate:</label>
+    <input type="date" id="birthDayDate" name="birthDayDate" th:field="*{myDate}" required />
 
     <label for="teamName">Team Name:</label>
     <input type="text" id="teamName" name="teamName" th:field="*{teamName}" required />

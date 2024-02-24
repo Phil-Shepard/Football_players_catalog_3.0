@@ -22,7 +22,6 @@ public class PlayerAddController {
 
     @GetMapping
     public String addPlayerForm(Model model) {
-        // Здесь можно передать список команд для выпадающего списка
         model.addAttribute("player", new Player());
         return "addPlayers";
     }
