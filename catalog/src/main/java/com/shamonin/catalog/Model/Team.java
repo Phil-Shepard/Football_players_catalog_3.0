@@ -14,7 +14,4 @@ public class Team {
     @Column(name = "teamName")
     private String teamName;
 
-//    @Column(name = "country")
-//    private String country;
-
 }

@@ -35,16 +35,6 @@ public class Player {
     @Column(name="country")
     private String country;
 
-//    @ManyToOne
-//    private Team team;
-//    public Team getTeam() {
-//        return team;
-//    }
-//
-//    public void setTeam(Team team) {
-//        this.team = team;
-//    }
-
 }
 
 

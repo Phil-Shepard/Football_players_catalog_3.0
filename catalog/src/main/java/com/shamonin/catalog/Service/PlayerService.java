@@ -18,6 +18,9 @@ public class PlayerService {
         this.playerRepository = playerRepository;
         this.teamService = teamService;
     }
+    public void save(Player player) {
+        playerRepository.save(player);
+    }
 
     public void addPlayer(Player player) {
         Team existingTeam = teamService.findTeamByName(player.getTeamName());
@@ -28,6 +31,22 @@ public class PlayerService {
         }
 
         playerRepository.save(player);
+    }
+
+    public Player getPlayerById(long id) {
+        return playerRepository.findById(Math.toIntExact(id)).orElse(null);
+    }
+    public void updatePlayer(Player updatedPlayer) {
+        Player existingPlayer = playerRepository.findById(Math.toIntExact(updatedPlayer.getId())).orElse(null);
+        if (existingPlayer != null) {
+            existingPlayer.setName(updatedPlayer.getName());
+            existingPlayer.setSurname(updatedPlayer.getSurname());
+            existingPlayer.setGender(updatedPlayer.getGender());
+            existingPlayer.setMyDate(updatedPlayer.getMyDate());
+            existingPlayer.setTeamName(updatedPlayer.getTeamName());
+            existingPlayer.setCountry(updatedPlayer.getCountry());
+            playerRepository.save(existingPlayer);
+        }
     }
 
     public List<Player> getAllPlayers() {

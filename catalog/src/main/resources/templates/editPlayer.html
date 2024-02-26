@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование футболиста</title>
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2>Редактирование футболиста</h2>
+
+    <form th:action="@{/saveEdit}" method="post" th:object="${player}">
+        <input type="hidden" th:field="*{id}" />
+        <label>Имя: <input type="text" th:field="*{name}" /></label><br/>
+        <label>Фамилия: <input type="text" th:field="*{surname}" /></label><br/>
+        <label>Пол:
+            <select th:field="*{gender}">
+                <option value="Мужчина">Мужчина</option>
+                <option value="Женщина">Женщина</option>
+            </select>
+        </label><br/>
+        <label>Дата рождения: <input type="text" th:field="*{myDate}" /></label><br/>
+        <label>Команда: <input type="text" th:field="*{teamName}" /></label><br/>
+        <label>Страна:
+            <select th:field="*{country}">
+                <option value="Россия">Россия</option>
+                <option value="США">США</option>
+                <option value="Италия">Италия</option>
+            </select>
+        </label><br/>
+
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+    </form>
+</div>
+
+</body>
+</html>
